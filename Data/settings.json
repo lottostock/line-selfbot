@@ -1,0 +1,28 @@
+{
+    "adders": true,
+    "addmsg": "Run SELFBOTV2",
+    "apikey": "imjustgood",
+    "blacklist": [],
+    "gname": {},
+    "join": false,
+    "justGood": "YXBpLmltanVzdGdvb2QuY29t",
+    "keykick": "",
+    "leave": false,
+    "leavemsg": "",
+    "main": "api.imjustgood.com",
+    "maker": [
+        "",
+        "",
+        ""
+    ],
+    "notMast": "https://www.img.in.th/images/8d8a98f486d4e22cf0cf0d80340bfc7d.png",
+    "official": ["ue541b98a9bd8d25e5388ff9a1378ece2","u0b499ce24e07b16ec12f8d0ba3ef8438"],
+    "proMax": {},
+    "proStaff": {},
+    "rname": "Default",
+    "target": {},
+    "ticket": false,
+    "welcome": "โลกนี้อยู่ยากขึ้นทุกวัน\n#ร้อนนรก#ยินดีต้อนรับสมาชิก",
+    "welcomsg": "ยินดีต้อนรับ",
+    "whitelist": []
+}
