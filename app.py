@@ -1,22 +1,37 @@
-import json
-import os
-import threading
-from dotenv import load_dotenv
-from linepy import (LINE, Channel, OEPoll, OpType)
+# -*- coding: utf-8-*-
+from Imgood.linepy import *
+from Imgood.linepy import (LINE, Channel, OEPoll, OpType)
+from Imgood.akad import *
+from Imgood.linepy.style import *
+from Imgood.linepy.login import *
+from justgood import imjustgood
+from time import sleep
+from gtts import gTTS
+from datetime import datetime
+from bs4 import BeautifulSoup
+from threading import Thread, active_count
+import os,traceback,sys,json,time,ast,requests,re,random,pytz
+from Liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest 
 
-# Auth
-load_dotenv()
-try:
-    if (id_ := os.getenv("EMAIL_ID")) and (pwd := os.getenv("PASSWORD")):
-        client = LINE(id_, pwd)
-    elif token := os.getenv("TOKEN"):
-        client = LINE(idOrAuthToken=token)
-    else:
-        client = LINE(showQr=True)
-except Exception as e:
-    print("Failed to authenticate")
-    print(e)
-    exit(1)
+
+login = json.loads(open('Data/token.json','r').read())
+setting = json.loads(open('Data/settings.json','r').read())
+cctv = json.loads(open('Data/cctv.json','r').read())
+loger = Login()
+
+if login["email"] == "":
+   if login["token"] == "":
+      data = loger.logqr(cert=None) #You can put your Crt token here
+      client = LINE(idOrAuthToken=data)
+      login["token"] = data
+      with open('Data/token.json', 'w') as fp:
+        json.dump(login, fp, sort_keys=True, indent=4)
+   else:
+   	  try:client = LINE(idOrAuthToken=login["token"])
+   	  except:print("TOKEN EXPIRED");sys.exit()
+else:
+  client = LINE(login["email"],login["password"])
+
 
 ops = OEPoll(client)
 whitelist = [client.profile.mid, client, ]
