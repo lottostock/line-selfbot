@@ -1,2 +1,8 @@
 linepy
 python-dotenv
+justgood==2.2.5
+livejson==1.8.1
+pytz==2018.5
+DateTime==4.3
+requests==2.22.0
+schedule==1.1.0
