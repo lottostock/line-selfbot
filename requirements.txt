@@ -1,6 +1,7 @@
 linepy
 python-dotenv
 gtts
+bs4
 justgood==2.2.5
 livejson==1.8.1
 pytz==2018.5
