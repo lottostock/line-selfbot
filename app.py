@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 from threading import Thread, active_count
 import os,traceback,sys,json,time,ast,requests,re,random,pytz
 from Liff.ttypes import LiffChatContext, LiffContext, LiffSquareChatContext, LiffNoneContext, LiffViewRequest 
-
+from te import schedule,lottoyekee
 
 login = json.loads(open('Data/token.json','r').read())
 setting = json.loads(open('Data/settings.json','r').read())
